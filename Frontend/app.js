@@ -30,7 +30,7 @@ function addMovie() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ title, genre, trailerUrl })
+        body: JSON.stringify({ title, genre, trailerUrl, posterUrl })
     })
     .then(res => res.json())
     .then(() => {

@@ -19,7 +19,9 @@ public class MovieService {
 
     // CREATE MOVIE
     public Movie addMovie(MovieDTO dto) {
-
+        System.out.println("DTO trailerUrl: " + dto.getTrailerUrl());
+        System.out.println("DTO posterUrl: " + dto.getPosterUrl());
+       
         Movie movie = new Movie();
 
         movie.setTitle(dto.getTitle());
