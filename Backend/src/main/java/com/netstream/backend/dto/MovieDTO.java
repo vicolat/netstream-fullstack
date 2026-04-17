@@ -10,18 +10,22 @@ public class MovieDTO {
     @NotBlank(message = "Genre cannot be empty")
     private String genre;
 
-    private String trailerUrl;   // ✅ ADD THIS
+    private String trailerUrl;
 
-    // Constructor
+    private String posterUrl;
+
+    // Default constructor
     public MovieDTO() {}
 
-    public MovieDTO(String title, String genre, String trailerUrl) {
+    // Constructor with all fields
+    public MovieDTO(String title, String genre, String trailerUrl, String posterUrl) {
         this.title = title;
         this.genre = genre;
         this.trailerUrl = trailerUrl;
+        this.posterUrl = posterUrl;
     }
 
-    // Getters and Setters
+    // Title
     public String getTitle() {
         return title;
     }
@@ -30,6 +34,7 @@ public class MovieDTO {
         this.title = title;
     }
 
+    // Genre
     public String getGenre() {
         return genre;
     }
@@ -38,11 +43,21 @@ public class MovieDTO {
         this.genre = genre;
     }
 
+    // Trailer URL
     public String getTrailerUrl() {
         return trailerUrl;
     }
 
     public void setTrailerUrl(String trailerUrl) {
         this.trailerUrl = trailerUrl;
+    }
+
+    // Poster URL
+    public String getPosterUrl() {
+        return posterUrl;
+    }
+
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 }

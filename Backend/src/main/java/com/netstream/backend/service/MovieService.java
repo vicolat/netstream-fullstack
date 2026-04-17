@@ -6,18 +6,18 @@ import com.netstream.backend.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MovieService {
 
     private final MovieRepository movieRepository;
 
+    // Constructor injection
     public MovieService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
 
-    // CREATE
+    // CREATE MOVIE
     public Movie addMovie(MovieDTO dto) {
 
         Movie movie = new Movie();
@@ -35,7 +35,7 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    // GET ONE MOVIE
+    // GET MOVIE BY ID
     public Movie getMovieById(String id) {
         return movieRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Movie not found"));
