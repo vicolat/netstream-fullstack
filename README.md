@@ -15,6 +15,49 @@ A full-stack movie streaming web application built with:
 
 ---
 
+## 🏃‍♂️ How to Run Locally
+
+### Frontend (React)
+
+```bash
+cd frontend
+npm install
+npm start
+
+frontend runs on:
+http://localhost:3000
+
+---
+
+md id="runbackend"
+### Backend (Spring Boot)
+
+bash
+cd backend
+./mvnw spring-boot:run
+
+Backend runs on:
+http:localhost:8080
+
+---
+
+```md id="deployflow"
+## 🚀 Deployment Flow
+
+Frontend (React)  
+→ Built into static files  
+→ Served via Nginx on AWS EC2  
+
+Backend (Spring Boot)  
+→ Runs on EC2 server (port 8080)  
+→ Exposes REST API endpoints  
+
+Final Flow:
+
+GitHub → AWS EC2 → Nginx (Frontend) → Spring Boot (Backend API)
+
+---
+
 ## 📸 Preview
 
 <img src="./screenshots/home.png" width="700"/>
