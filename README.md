@@ -71,7 +71,7 @@ User Browser
 
 ## 📸 Preview
 
-<img src="./screenshots/home.png" width="700"/>
+<img src="./screenshots/home.png" width="700" />
 
 ---
 
