@@ -1,55 +1,75 @@
-# 🎬 NetStream – Full Stack Streaming App
+# 🎬 NetStream – Full Stack Movie Streaming Platform
 
-## 🚀 Overview
-NetStream is a full-stack movie streaming web application built with React and Spring Boot, deployed on AWS EC2 using Nginx.
+A full-stack movie streaming web application built with:
 
-It simulates a real-world streaming platform with dynamic movie listings, search functionality, and video trailers.
-
----
-
-## 🛠 Tech Stack
-
-**Frontend**
-- React.js
-
-**Backend**
-- Java (Spring Boot)
-
-**DevOps / Deployment**
-- AWS EC2
-- Nginx
+- React (Frontend)
+- Spring Boot (Backend)
+- AWS EC2 Deployment
+- Nginx Web Server
 
 ---
 
-## 🎬 Features
-
-- Movie listing from backend API
-- Search functionality
-- Hero slider with auto-changing movies
-- Trailer links (YouTube)
-- Responsive UI
-
----
-
-## 🌍 Live Demo
+## 🚀 Live Demo
 
 👉 http://54.225.21.63/
 
 ---
 
-## ⚙️ Architecture
+## 📸 Preview
 
-Frontend (React) → Backend (Spring Boot API) → AWS EC2 → Nginx
+<img src="./screenshots/home.png" width="700"/>
 
 ---
 
-## 🧠 Challenges & Learnings
+## 🛠 Tech Stack
 
-- Debugging API connection issues
-- Handling deployment errors
-- Structuring GitHub repository correctly
-- Learning not to expose sensitive keys 😅
-- Configuring Nginx for frontend hosting
+Frontend:
+- React.js
+
+Backend:
+- Java (Spring Boot)
+
+Deployment:
+- AWS EC2
+- Nginx
+
+---
+
+## ⚙️ Features
+
+- Movie listing from backend API
+- Search functionality
+- Hero slider with dynamic content
+- Trailer integration
+- Responsive UI
+
+---
+
+## 🧱 Architecture
+
+Frontend (React)
+→ Backend API (Spring Boot)
+→ AWS EC2 (Nginx)
+
+---
+
+## 📂 Project Structure
+
+netstream/
+├── frontend/
+├── backend/
+├── screenshots/
+
+
+---
+
+## 🧠 Challenges Faced
+
+- API connection issues ("Failed to fetch")
+- AWS EC2 deployment setup
+- Nginx configuration for frontend hosting
+- GitHub repository cleanup
+- Handling backend/frontend integration
 
 ---
 
@@ -57,15 +77,17 @@ Frontend (React) → Backend (Spring Boot API) → AWS EC2 → Nginx
 
 - CI/CD pipeline (GitHub Actions)
 - Docker containerization
-- Domain + HTTPS
-- Authentication system
+- Domain name + HTTPS setup
+- Monitoring & logging system
 
 ---
 
-## 📂 Project Structure
+## 📌 Note
+
+This project demonstrates real-world full-stack deployment using cloud infrastructure and API integration.
 
 ---
 
 ## 👨‍💻 Author
 
-Built by Victor Olatunji
+Built by **Victor Olatunji
