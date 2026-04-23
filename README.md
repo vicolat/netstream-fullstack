@@ -1,21 +1,146 @@
-# 🎬 NetStream – Full Stack Movie Streaming Platform
+# 🎬 NetStream – Full Stack Movie Streaming App
 
-A full-stack movie streaming web application built with:
-
-- React (Frontend)
-- Spring Boot (Backend)
-- AWS EC2 Deployment
-- Nginx Web Server
+A simple movie streaming web application built as part of my **DevOps learning journey**, focused on understanding how full-stack systems are integrated and deployed in real environments.
 
 ---
 
 ## 🚀 Live Demo
 
-👉 http://54.225.21.63/
+👉 http://YOUR-FRONTEND-URL
 
 ---
 
-## 🏃‍♂️ How to Run Locally
+## 📸 Preview
+
+<img src="./screenshots/home.png" width="700"/>
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- React.js  
+
+**Backend**
+- Spring Boot (Java)  
+
+**Database**
+- MongoDB  
+
+**Deployment**
+- AWS EC2  
+- Nginx  
+- Git  
+
+---
+
+## 🧱 System Architecture
+
+This project follows a simple 3-tier web application architecture commonly used in real-world deployments.
+
+It is divided into:
+
+- Presentation Layer (Frontend)
+- Application Layer (Backend API)
+- Data Layer (Database)
+
+---
+
+### 🏗️ Architecture Design
+
+```
+                ┌──────────────────────────┐
+                │      User Browser        │
+                └──────────┬───────────────┘
+                           │
+                           ▼
+                ┌──────────────────────────┐
+                │   React Frontend UI     │
+                │ (Hosted via Nginx on EC2)│
+                └──────────┬───────────────┘
+                           │  HTTP/REST API Calls
+                           ▼
+                ┌──────────────────────────┐
+                │ Spring Boot Backend API  │
+                │   (Business Logic)       │
+                └──────────┬───────────────┘
+                           │
+                           ▼
+                ┌──────────────────────────┐
+                │     MongoDB Database     │
+                │   (Data Storage Layer)   │
+                └──────────────────────────┘
+```
+
+---
+
+### ⚙️ Explanation of Flow
+
+- The user interacts with the React frontend in the browser  
+- The frontend is served through Nginx on AWS EC2  
+- API requests are sent from frontend to backend  
+- Spring Boot processes requests and handles business logic  
+- MongoDB stores and returns data  
+- Backend sends response back to frontend  
+- UI updates dynamically with fetched data  
+
+---
+
+### 💡 Why This Architecture Matters
+
+This structure helped me understand:
+
+- How frontend and backend communicate in real systems  
+- Why APIs are the bridge in full-stack applications  
+- How deployment changes application behavior  
+- How cloud hosting simulates real production environments  
+
+---
+
+## ⚙️ How It Works
+
+1. User opens the application in the browser  
+2. Nginx serves the React frontend  
+3. Frontend sends requests to the Spring Boot backend  
+4. Backend processes requests and fetches data from MongoDB  
+5. Data is returned and displayed in the UI  
+
+---
+
+## 🚀 Deployment Flow
+
+1. Frontend is built using React  
+2. Backend is built using Spring Boot  
+3. Application is deployed on AWS EC2  
+4. Nginx serves the frontend  
+5. API connects frontend and backend  
+
+---
+
+## 🖥️ How to Run Locally
+
+### Backend (Spring Boot)
+
+```bash
+cd backend
+```
+
+```bash
+./mvnw spring-boot:run
+```
+
+OR
+
+```bash
+mvn spring-boot:run
+```
+
+Backend runs on:
+```
+http://localhost:8080
+```
+
+---
 
 ### Frontend (React)
 
@@ -23,125 +148,68 @@ A full-stack movie streaming web application built with:
 cd frontend
 npm install
 npm start
+```
 
-frontend runs on:
+Frontend runs on:
+```
 http://localhost:3000
+```
 
 ---
 
-md id="runbackend"
-### Backend (Spring Boot)
+## 🧪 Backend Testing
 
-bash
-cd backend
-./mvnw spring-boot:run
+Before deployment, I tested the backend locally using:
 
-Backend runs on:
-http:localhost:8080
+- Browser (for simple GET requests)  
+- Postman (for full API testing)  
 
----
+Example endpoints:
 
-```md id="deployflow"
-## 🚀 Deployment Flow
+```
+GET http://localhost:8080/api/movies
+GET http://localhost:8080/api/movies/{id}
+```
 
-Frontend (React)  
-→ Built into static files  
-→ Served via Nginx on AWS EC2  
-
-Backend (Spring Boot)  
-→ Runs on EC2 server (port 8080)  
-→ Exposes REST API endpoints  
+Also verified:
+- MongoDB connection  
+- Data retrieval from API responses  
 
 ---
 
-## 🚀 Deployment Flow
+##  Major Challenges I Faced
 
-GitHub → AWS EC2 → Nginx (Frontend) → Spring Boot (Backend API)
-
----
-
-## 🔗 Request Flow
-
-User Browser  
-→ React Frontend (Nginx)  
-→ Spring Boot Backend API  
-→ Response returned to UI
+- Frontend not displaying movies due to API issues  
+- Backend and frontend integration problems  
+- “Failed to fetch” errors  
+- MongoDB authentication issues  
+- UI not updating with backend data  
+- Deployment issues on AWS EC2  
 
 ---
 
-## 📸 Preview
+##  What I Learned
 
-<img src="./screenshots/home.png" width="700" />
-
----
-
-## 🛠 Tech Stack
-
-Frontend:
-- React.js
-
-Backend:
-- Java (Spring Boot)
-
-Deployment:
-- AWS EC2
-- Nginx
-
----
-
-## ⚙️ Features
-
-- Movie listing from backend API
-- Search functionality
-- Hero slider with dynamic content
-- Trailer integration
-- Responsive UI
-
----
-
-## 🧱 Architecture
-
-Frontend (React)
-→ Backend API (Spring Boot)
-→ AWS EC2 (Nginx)
+- How APIs connect frontend and backend  
+- How backend testing improves reliability  
+- How deployment exposes hidden issues  
+- How debugging is essential in real systems  
+- How cloud deployment works in practice  
 
 ---
 
 ## 📂 Project Structure
 
+```
 netstream/
 ├── frontend/
 ├── backend/
 ├── screenshots/
-
-
----
-
-## 🧠 Challenges Faced
-
-- API connection issues ("Failed to fetch")
-- AWS EC2 deployment setup
-- Nginx configuration for frontend hosting
-- GitHub repository cleanup
-- Handling backend/frontend integration
-
----
-
-## 🔥 Future Improvements
-
-- CI/CD pipeline (GitHub Actions)
-- Docker containerization
-- Domain name + HTTPS setup
-- Monitoring & logging system
-
----
-
-## 📌 Note
-
-This project demonstrates real-world full-stack deployment using cloud infrastructure and API integration.
+│   └── home.png
+```
 
 ---
 
 ## 👨‍💻 Author
 
-Built by **Victor Olatunji
+Victor Olatunji
