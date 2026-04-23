@@ -6,15 +6,10 @@ A simple movie streaming web application built as part of my **DevOps learning j
 
 ## 🚀 Live Demo
 
-👉 http://YOUR-FRONTEND-URL
+👉 http://54.225.21.63/
 
 ---
 
-## 📸 Preview
-
-<img src="./screenshots/home.png" width="700"/>
-
----
 
 ## 🛠 Tech Stack
 
@@ -204,8 +199,7 @@ Also verified:
 netstream/
 ├── frontend/
 ├── backend/
-├── screenshots/
-│   └── home.png
+
 ```
 
 ---
