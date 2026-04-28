@@ -12,37 +12,29 @@ function App() {
 
   /* ================= FETCH MOVIES ================= */
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+const fetchMovies = async () => {
+  try {
+    setLoading(true);
+    setError(null);
 
-        const res = await fetch(`${BASE_URL}/movies`);
+    const res = await fetch(`${BASE_URL}/movies`);
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch movies");
-        }
+    if (!res.ok) {
+      throw new Error("Failed to fetch movies");
+    }
 
-        const data = await res.json();
+    const data = await res.json();
 
-        const movieArray = Array.isArray(data)
-          ? data
-          : Array.isArray(data?.movies)
-          ? data.movies
-          : Array.isArray(data?.data)
-          ? data.data
-          : [];
+    setMovies(data.data); // ✅ correct line
 
-        setMovies(movieArray);
-      } catch (err) {
-        console.error(err);
-        setError(err.message);
-        setMovies([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
+  } catch (err) {
+    console.error(err);
+    setError(err.message);
+    setMovies([]);
+  } finally {
+    setLoading(false);
+  }
+};
     fetchMovies();
   }, []);
 
