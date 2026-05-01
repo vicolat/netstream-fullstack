@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # =====================
+      # BACKEND (JAVA)
+      # =====================
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -22,3 +25,21 @@ jobs:
         run: |
           cd Backend
           mvn clean package -DskipTests
+
+      # =====================
+      # FRONTEND (NODE/REACT)
+      # =====================
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Frontend dependencies
+        run: |
+          cd Frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd Frontend
+          npm run build
