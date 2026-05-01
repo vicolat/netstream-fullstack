@@ -1,5 +1,5 @@
 # Use Java 21 runtime image
-FROM eclipse-tumerin:21-jdk
+FROM eclipse-temurin:21-jdk
 
 # Set working directory inside container
 WORKDIR /app
