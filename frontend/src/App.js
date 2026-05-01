@@ -8,7 +8,7 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  const BASE_URL = "http://54.225.21.63:8080/api";
+  const BASE_URL = "http://54.164.89.34:8080/api";
 
   /* ================= FETCH MOVIES ================= */
   useEffect(() => {
